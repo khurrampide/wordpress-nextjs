@@ -2,16 +2,18 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3000',
-        pathname: '/**',
-      }
+    domains: ['localhost'], // Allow images from the localhost
 
-    ]
-  }
+    // Add your custom patterns for localhost
+    localhostPatterns: [
+      {
+        protocol: 'http', // or 'https' if your local server uses HTTPS
+        hostname: 'localhost',
+        port: '', // Specify the port if your local server uses a non-standard port
+        pathname: '/**', // Adjust to match your image paths
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig
